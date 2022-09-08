@@ -189,6 +189,54 @@ z-index: 999;
 font-size: 30px;
 }
 
-input {
+.upload-submit {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  padding: 10px;
+  font-family: chronotype;
+  font-size: 30px;
+  font-weight: 600;
+}
 
+.upload-form {
+  background-color: black;
+  color: white;
+  font-family: chronotype;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.upload-input {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: chronotype;
+  background-color: black;
+  color: white;
+
+}
+
+::-webkit-file-upload-button {
+  display: none;
+}
+
+.upload-label {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: chronotype;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  padding: 10px;
+}
+
+#vertical {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  margin: auto;
+  white-space: nowrap;
 }
