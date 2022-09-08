@@ -21,8 +21,6 @@ body {
     text-align: center;
 }
 
-.wrap {
-}
 a {
     color: #00ffd9;
 }
@@ -239,4 +237,14 @@ font-size: 30px;
   transform: translateX(-50%) translateY(-50%);
   margin: auto;
   white-space: nowrap;
+}
+
+input {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  padding: 10px;
+  font-family: chronotype;
+  font-size: 30px;
+  font-weight: 600;
 }
