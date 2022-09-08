@@ -238,13 +238,3 @@ font-size: 30px;
   margin: auto;
   white-space: nowrap;
 }
-
-input[type="file" i] {
-  background-color: black;
-  color: white;
-  border: 2px solid white;
-  padding: 10px;
-  font-family: chronotype;
-  font-size: 30px;
-  font-weight: 600;
-}
