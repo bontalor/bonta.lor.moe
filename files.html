@@ -1,12 +1,4 @@
-<body>
-    <div class="container">
-        <h1>Multipart File Upload</h1>
-        <form action="/upload" id="form" enctype="multipart/form-data">
-            <div class="input-group">
-                <label for="files">Select files</label>
-                <input id="file" type="file" multiple />
-            </div>
-            <button class="submit-btn" type="submit">Upload</button>
-        </form>
-    </div>
-</body>
+<form method="post" action="/upload" enctype="multipart/form-data">
+    <input type="file" id="myFile" name="file">
+    <input type="submit">
+  </form>
