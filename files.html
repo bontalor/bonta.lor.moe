@@ -5,6 +5,7 @@
 	    <title>bonta</title>
 	    <script src="https://kit.fontawesome.com/5fb7db237e.js" crossorigin="anonymous"></script>
 	    <link href="styles.css" type="text/css" rel="stylesheet" />
+        <script src="files.js"></script>
     </head>
     <body id="vertical">
         <form class="upload-form" method="post" action="/upload" enctype="multipart/form-data">
@@ -12,5 +13,8 @@
             <input class="upload-input" type="file" id="myFile" name="file">
             <input class="upload-submit" type="submit">
         </form>
+        <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+            <p>Drag one or more files to this <i>drop zone</i>.</p>
+        </div>
     </body>
 </html>
