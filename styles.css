@@ -216,10 +216,9 @@ font-size: 30px;
   font-family: chronotype;
   background-color: black;
   color: white;
-
 }
 
-::-webkit-file-upload-button {
+input::file-selector-button {
   display: none;
 }
 
