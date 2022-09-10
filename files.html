@@ -8,13 +8,10 @@
         <script src="files.js"></script>
     </head>
     <body id="vertical">
-        <form class="upload-form" method="post" action="/upload" enctype="multipart/form-data">
+        <form id="form-upload" class="upload-form" method="post" action="/upload" enctype="multipart/form-data">
             <label class="upload-label" for="myFile">Choose File</label>
             <input class="upload-input" type="file" id="myFile" name="file">
             <input class="upload-submit" type="submit">
         </form>
-        <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
-            <p>Drag one or more files to this <i>drop zone</i>.</p>
-        </div>
     </body>
 </html>
