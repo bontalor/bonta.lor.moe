@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "ChronoType";
+  src: url("/fonts/ChronoType.woff2") format("woff2"), url("/fonts/ChronoType.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  color: #f4f1fe;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 100px;
+}
+
+body {
+  color: #f4f1fe;
+  background: #000000;
+  font-family: "chronotype";
+  font-size: 16px;
+}/*# sourceMappingURL=styles.css.map */
