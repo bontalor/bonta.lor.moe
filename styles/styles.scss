@@ -28,4 +28,8 @@ body {
     background: $background;
     font-family: "chronotype";
     font-size: 16px;
+    display: flex;
+    width: 100%;
+    max-width: 10000px;
+    padding: 32px;
 }
