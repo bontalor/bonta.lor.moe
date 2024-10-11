@@ -2,5 +2,7 @@
 
 source "https://rubygems.org"
 
-# gem "rails"
-gem "jekyll"
+gem "kramdown-parser-gfm"
+gem "no-style-please"
+
+gemspec
