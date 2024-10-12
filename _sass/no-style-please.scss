@@ -66,15 +66,39 @@ body {
   overflow-wrap: break-word;
 }
 
-header {
-  text-align: center;
+header nav {
+    text-align: center;
+    display: flex;
+    margin-top: 30px;
+    overflow: hidden;
+    position: relative
 }
 
-/* Style the navigation bar */
-nav {
-  background-color: #f0f0f0;
-  padding: 10px;
-  text-align: center;
+header nav a {
+    background-color: #222;
+    border: 5px solid #eee;
+    color: #eee;
+    padding: 10px 15px;
+    transform: translateY(0);
+    transition: background-color .1s,border-color .1s,color .1s,z-index .1s,transform .5s;
+    z-index: 2
+}
+
+header nav a.active {
+    background-color: #4d4d4d;
+    color: #eee
+}
+
+header nav a:not(:first-child) {
+    margin-left: -5px
+}
+
+header nav a:hover,header nav a:focus {
+    background-color: #610000;
+    border-color: #ff7c7c;
+    color: #f44;
+    text-decoration: none;
+    z-index: 3
 }
 
 /* Style the list and navigation links */
