@@ -76,14 +76,19 @@ p { margin: 1rem 0; }
 
 li { margin: 0.4rem 0; }
 
-*:target { background: green; }
+*:target { background: #280c8d; }
 
 a:link{
-  color: rgb(135, 240, 135);
+  color: #663EFA;
 }
 
 a:visited{
-  color: rgb(135, 240, 135);
+  color: #663EFA;
+}
+
+::selection {
+  background-color: #0c042a;
+  color: white;
 }
 
 .w {
