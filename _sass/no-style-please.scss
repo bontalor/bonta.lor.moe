@@ -1,10 +1,17 @@
+@font-face {
+    font-family: 'Rose-Tinted';
+    src: url('/assets/fonts/Rose-Tinted-A-Pixel-Type-Family/Rose-Tinted_Regular_v1.0.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body { background: black; }
 
 html { height: 100%; }
 
 body {
   color: white;
-  font-family: monospace;
+  font-family: Rose-Tinted;
   font-size: 16px;
   line-height: 1.4;
   margin: 0;
