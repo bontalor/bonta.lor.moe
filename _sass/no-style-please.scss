@@ -6,6 +6,31 @@
   font-style: normal;
 }
 
+/* Rose Tinted Italic */
+@font-face {
+  font-family: "Rose Tinted";
+  src: url('/assets/fonts/Rose-Tinted-A-Pixel-Type-Family/Rose-Tinted_Italic_v1.0.woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Rose Tinted Bold */
+@font-face {
+  font-family: "Rose Tinted";
+  src: url('/assets/fonts/Rose-Tinted-A-Pixel-Type-Family/Rose-Tinted_Bold_v1.0.woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Rose Tinted Bold Italic */
+@font-face {
+  font-family: "Rose Tinted";
+  src: url('/assets/fonts/Rose-Tinted-A-Pixel-Type-Family/Rose-Tinted_BoldItalic_v1.0.woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+
 html, body { background: white; }
 
 html { height: 100%; }
