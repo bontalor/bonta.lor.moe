@@ -67,67 +67,39 @@ body {
 }
 
 header nav {
-    text-align: center;
-    display: flex;
-    margin-top: 30px;
-    overflow: hidden;
-    position: relative
+  text-align: center;
+  display: flex;
+  margin-top: 30px;
+  overflow: hidden;
+  position: relative
 }
 
 header nav a {
-    background-color: #222;
-    border: 5px solid #eee;
-    color: #eee;
-    padding: 10px 15px;
-    transform: translateY(0);
-    transition: background-color .1s,border-color .1s,color .1s,z-index .1s,transform .5s;
-    z-index: 2
+  background-color: #222;
+  border: 5px solid #eee;
+  color: #eee;
+  padding: 10px 15px;
+  transform: translateY(0);
+  transition: background-color .1s,border-color .1s,color .1s,z-index .1s,transform .5s;
+  z-index: 2
 }
 
 header nav a.active {
-    background-color: #4d4d4d;
-    color: #eee
+  background-color: #4d4d4d;
+  color: #eee
 }
 
 header nav a:not(:first-child) {
-    margin-left: -5px
+  margin-left: -5px
 }
 
 header nav a:hover,header nav a:focus {
-    background-color: #610000;
-    border-color: #ff7c7c;
-    color: #f44;
-    text-decoration: none;
-    z-index: 3
-}
-
-/* Style the list and navigation links */
-.nav-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.nav-links a {
+  background-color: #610000;
+  border-color: #ff7c7c;
+  color: #f44;
   text-decoration: none;
-  padding: 10px 20px;
-  background-color: #007bff; /* Blue background */
-  color: white; /* White text */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 1em;
+  z-index: 3
 }
-
-/* Hover effect for links */
-.nav-links a:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  color: #f0f0f0;
-}
-
 
 .post-meta { text-align: right; }
 
