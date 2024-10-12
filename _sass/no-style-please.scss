@@ -66,13 +66,13 @@ body {
   overflow-wrap: break-word;
 }
 
-header nav {
+header, nav {
   display: flex;
   justify-content: center;
   overflow: hidden;
 }
 
-header nav a {
+header, nav a {
   background-color: #222;
   border: 5px solid #eee;
   color: #eee;
@@ -82,16 +82,16 @@ header nav a {
   z-index: 2;
 }
 
-header nav a.active {
+header, nav a.active {
   background-color: #4d4d4d;
   color: #eee;
 }
 
-header nav a:not(:first-child) {
+header, nav a:not(:first-child) {
   margin-left: -5px;
 }
 
-header nav a:hover,header nav a:focus {
+header, nav a:hover,header nav a:focus {
   background-color: #610000;
   border-color: #ff7c7c;
   color: #f44;
