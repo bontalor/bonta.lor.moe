@@ -66,15 +66,9 @@ body {
   overflow-wrap: break-word;
 }
 
-header {
-  text-align: center;
-}
-
 header nav {
-  align-content: center;
-  text-align: center;
   display: flex;
-  margin-top: 30px;
+  justify-content: center;
   overflow: hidden;
 }
 
