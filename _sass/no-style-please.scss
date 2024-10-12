@@ -71,7 +71,6 @@ header nav {
   display: flex;
   margin-top: 30px;
   overflow: hidden;
-  position: relative
 }
 
 header nav a {
@@ -81,16 +80,16 @@ header nav a {
   padding: 10px 15px;
   transform: translateY(0);
   transition: background-color .1s,border-color .1s,color .1s,z-index .1s,transform .5s;
-  z-index: 2
+  z-index: 2;
 }
 
 header nav a.active {
   background-color: #4d4d4d;
-  color: #eee
+  color: #eee;
 }
 
 header nav a:not(:first-child) {
-  margin-left: -5px
+  margin-left: -5px;
 }
 
 header nav a:hover,header nav a:focus {
@@ -98,7 +97,7 @@ header nav a:hover,header nav a:focus {
   border-color: #ff7c7c;
   color: #f44;
   text-decoration: none;
-  z-index: 3
+  z-index: 3;
 }
 
 .post-meta { text-align: right; }
