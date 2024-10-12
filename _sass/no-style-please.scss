@@ -1,17 +1,31 @@
-@font-face {
-    font-family: 'Rose-Tinted';
-    src: url('/assets/fonts/Rose-Tinted-A-Pixel-Type-Family/Rose-Tinted_Regular_v1.0.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
+// -------------- THEME SWITCHER -------------- //
+@mixin light-appearance {
+  filter: invert(1);
+  img {
+    filter: invert(1);
+
+    &.ioda { filter: invert(0); }
+  }
 }
 
+body[a="light"] { @include light-appearance; }
+
+
+@media (prefers-color-scheme: light) {
+  body[a="light"] { @include light-appearance; }
+}
+// -------------------------------------------- //
+
+// bg color is also needed in html in order to
+// block body's background propagation
+// see: https://stackoverflow.com/a/61265706
 html, body { background: black; }
 
 html { height: 100%; }
 
 body {
   color: white;
-  font-family: 'Rose-Tinted';
+  font-family: monospace;
   font-size: 16px;
   line-height: 1.4;
   margin: 0;
@@ -29,7 +43,15 @@ p { margin: 1rem 0; }
 
 li { margin: 0.4rem 0; }
 
-*:target { background: yellow; }
+*:target { background: green; }
+
+a:link{
+  color: rgb(135, 240, 135);
+}
+
+a:visited{
+  color: rgb(135, 240, 135);
+}
 
 .w {
   max-width: 640px;
@@ -48,26 +70,14 @@ hr {
 table { width: 100%; }
 
 table, th, td {
-  border: thin solid black;
+  border: thin solid white;
   border-collapse: collapse;
   padding: 0.4rem;
 }
 
-code {
-  color: white;
-  background: black;
-}
-
-div.highlighter-rouge code {
-  display: block;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  padding: 1rem;
-}
-
 blockquote {
   font-style: italic;
-  border: thin solid black;
+  border: thin solid white;
   padding: 1rem;
 
   p { margin: 0; }
