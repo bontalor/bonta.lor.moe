@@ -3,7 +3,10 @@ layout: default
 ---
 <header>
   <h1>{{ site.title }}</h1>
-  {% include header.html %}
+    <nav>
+      <a href="{{ site.url }}">Home</a> 
+      <a href="{{ site.url }}{{ site.Blog }}">Blog</a>
+    </nav>
   {%-if site.theme_config.show_description-%}
     <p>{{ site.description }}</p>
   {%-endif-%}
