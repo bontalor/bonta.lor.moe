@@ -51,7 +51,7 @@ body[a="light"] { @include light-appearance; }
 // bg color is also needed in html in order to
 // block body's background propagation
 // see: https://stackoverflow.com/a/61265706
-html, body { background: black; }
+html, body { background: #0c042a; }
 
 html { height: 100%; }
 
@@ -87,7 +87,7 @@ a:visited{
 }
 
 ::selection {
-  background-color: #0c042a;
+  background-color: #663EFA;
   color: white;
 }
 
