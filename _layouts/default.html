@@ -8,9 +8,16 @@
       </div>
     </main>
 
-    {%-if site.goat_counter and jekyll.environment == "production"-%}
-      {%-include goat_counter.html-%}
-    {%-endif-%}
+<header>
+  <h1>{{ site.title }}</h1>
+    <nav>
+      <a href="{{ site.url }}">Home</a> 
+      <a href="{{ site.url }}{{ site.Blog }}">Blog</a>
+    </nav>
+  {%-if site.theme_config.show_description-%}
+    <p>{{ site.description }}</p>
+  {%-endif-%}
+</header>
 
     {% if page.custom_js %}
       {% for js_file in page.custom_js %}
