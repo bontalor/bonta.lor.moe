@@ -1,5 +1,5 @@
 ---
 layout: archive
 title: Blogs
-category: blogs
+which_category: blogs
 ---
