@@ -53,7 +53,10 @@ body[a="light"] { @include light-appearance; }
 // see: https://stackoverflow.com/a/61265706
 html, body { background: #0c042a; }
 
-html { height: 100%; }
+html { 
+  height: 100%;
+  scrollbar-color: #aa7cff #0c042a;
+}
 
 body {
   color: #ffffff;
@@ -63,7 +66,6 @@ body {
   line-height: 1.3;
   margin: 0;
   overflow-wrap: break-word;
-  scrollbar-color: #aa7cff #0c042a;
 }
 
 header {
