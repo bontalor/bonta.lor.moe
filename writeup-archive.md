@@ -1,5 +1,5 @@
 ---
 layout: archive
 title: Archive
-category: writeup
+which_category: writeup
 ---
