@@ -87,6 +87,10 @@ nav a {
   padding: 10px 15px;
 }
 
+nav a:visited {
+  color: #ffffff;
+}
+
 nav a.active {
   background-color: #4d4d4d;
   color: #ffffff;
