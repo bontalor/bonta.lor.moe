@@ -155,6 +155,7 @@ hr {
 table { width: 100%; }
 
 table, th, td {
+  background: #000000;
   border: 5px solid #ffffff;
   padding: 10px 15px;
   border-collapse: collapse;
@@ -173,3 +174,8 @@ img {
   display: block;
   margin: 0 auto;
 }
+
+::-webkit-scrollbar {
+  background: #aa7cff;
+}
+
