@@ -9,7 +9,7 @@ title: certifications
 ## Hack The Box Certified Bug Bounty Hunter
 
 ### Vendor: Hack The Box
-- Date acquired: February 2023
+- Date acquired: October 2024
 - Exprires: Never
 - Verify: [CBBH](https://www.hackthebox.com/certificates)
 
