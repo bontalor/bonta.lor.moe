@@ -82,7 +82,7 @@ nav {
 }
 
 nav a {
-  background-color: #222;
+  background-color: #000000;
   border: 5px solid #eee;
   color: #ffffff;
   padding: 10px 15px;
@@ -103,9 +103,9 @@ nav a:not(:first-child) {
 }
 
 nav a:hover, nav a:focus {
-  background-color: #610000;
-  border-color: #ff7c7c;
-  color: #f44;
+  background-color: #0c042a;
+  border-color: #aa7cff;
+  color: #663EFA;
   text-decoration: none;
   z-index: 3;
 }
