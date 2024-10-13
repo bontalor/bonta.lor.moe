@@ -1,6 +1,6 @@
 ---
 layout: page
-title: certifications
+title: Certifications
 ---
 
 ### Table of Contents
