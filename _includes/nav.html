@@ -1,7 +1,7 @@
 <nav>
-  <a href="{{ "/" | relative_url }}">Home</a> 
-  <a href="./certifications">Certs</a>
-  <a href="./blog-archive">Blogs</a>
-  <a href="./writeup-archive">Writeups</a>
-  <a href="./archive">All</a>
+  <a href="{{ "/" | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a> 
+  <a href="./certifications" class="{% if page.url == '/certifications' %}active{% endif %}">Certs</a>
+  <a href="./blog-archive" class="{% if page.url == '/blog-archive' %}active{% endif %}">Blogs</a>
+  <a href="./writeup-archive" class="{% if page.url == '/writeup-archive' %}active{% endif %}">Writeups</a>
+  <a href="./archive" class="{% if page.url == '/archive' %}active{% endif %}">All</a>
 </nav>
