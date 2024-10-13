@@ -108,7 +108,7 @@ nav a:not(:first-child) {
   margin-left: -5px;
 }
 
-nav a:hover, nav a:focus {
+nav a:hover, nav a:focus, nav a:active {
   background-color: #0c042a;
   border-color: #aa7cff;
   color: #aa7cff;
@@ -128,11 +128,11 @@ li { margin: 0.4rem 0; }
 
 *:target { background: #280c8d; }
 
-a:link{
+a:link {
   color: #aa7cff;
 }
 
-a:visited{
+a:visited {
   color: #aa7cff;
 }
 
