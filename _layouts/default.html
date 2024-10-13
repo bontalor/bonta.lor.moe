@@ -4,13 +4,7 @@
   <body a="{{ site.theme_config.appearance | default: "auto" }}">
     <header>
       <h1>{{ site.title }}</h1>
-        <nav>
-          <a href="{{ "/" | relative_url }}">Home</a> 
-          <a href="./certifications">Certs</a>
-          <a href="./blog-archive">Blogs</a>
-          <a href="./writeup-archive">Writeups</a>
-          <a href="./archive">All</a>
-        </nav>
+        {%- include nav.html -%}
       {%-if site.theme_config.show_description-%}
         <p>{{ site.description }}</p>
       {%-endif-%}
