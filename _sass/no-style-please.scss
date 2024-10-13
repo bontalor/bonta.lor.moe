@@ -125,6 +125,11 @@ li { margin: 0.4rem 0; }
 
 a:link {
   color: #aa7cff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; 
 }
 
 a:visited {
