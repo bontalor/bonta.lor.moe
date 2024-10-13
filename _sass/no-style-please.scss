@@ -176,27 +176,3 @@ img {
   display: block;
   margin: 0 auto;
 }
-
-::-webkit-scrollbar {
-  background: #0c042a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #aa7cff;
-}
-
-::-webkit-scrollbar-button {
-    background: #0c042a;
-}
-
-::-webkit-scrollbar-button:vertical:decrement {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="black" viewBox="0 0 16 16"><polygon points="4,4 8,8 12,4" /></svg>'); /* Up arrow */
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-::-webkit-scrollbar-button:vertical:increment {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="black" viewBox="0 0 16 16"><polygon points="4,12 8,8 12,12" /></svg>'); /* Down arrow */
-    background-repeat: no-repeat;
-    background-position: center;
-}
