@@ -56,7 +56,7 @@ html, body { background: #0c042a; }
 html { height: 100%; }
 
 body {
-  color: white;
+  color: #ffffff;
   font-family: "Rose Tinted";
   font-size: 13pt;
   letter-spacing: .5px;
@@ -70,6 +70,10 @@ header {
   text-align: center;
 }
 
+header a {
+  color: #ffffff;
+}
+
 nav {
   display: flex;
   justify-content: center;
@@ -79,23 +83,20 @@ nav {
 nav a {
   background-color: #222;
   border: 5px solid #eee;
-  color: #eee;
+  color: #ffffff;
   padding: 10px 15px;
-  transform: translateY(0);
-  transition: background-color .1s,border-color .1s,color .1s,z-index .1s,transform .5s;
-  z-index: 2;
 }
 
 nav a.active {
   background-color: #4d4d4d;
-  color: #eee;
+  color: #ffffff;
 }
 
 nav a:not(:first-child) {
   margin-left: -5px;
 }
 
-nav a:hover,header nav a:focus {
+nav a:hover, nav a:focus {
   background-color: #610000;
   border-color: #ff7c7c;
   color: #f44;
@@ -125,7 +126,7 @@ a:visited{
 
 ::selection {
   background-color: #663EFA;
-  color: white;
+  color: #ffffff;
 }
 
 .w {
@@ -145,20 +146,20 @@ hr {
 table { width: 100%; }
 
 table, th, td {
-  border: thin solid white;
+  border: 5px solid #eee;
+  padding: 10px 15px;
   border-collapse: collapse;
-  padding: 0.4rem;
 }
 
 code {
   font-family: "Rose Tinted";
   color: #0c042a;
-  background: white;
+  background: #ffffff;
 }
 
 blockquote {
   font-style: italic;
-  border: thin solid white;
+  border: thin solid #ffffff;
   padding: 1rem;
 
   p { margin: 0; }
