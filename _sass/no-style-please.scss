@@ -51,7 +51,7 @@ body[a="light"] { @include light-appearance; }
 // bg color is also needed in html in order to
 // block body's background propagation
 // see: https://stackoverflow.com/a/61265706
-html, body { background: #0c042a; }
+html, body { background: #000000; }
 
 html { height: 100%; }
 
@@ -103,7 +103,7 @@ nav a:not(:first-child) {
 }
 
 nav a:hover, nav a:focus {
-  background-color: #280c8d;
+  background-color: #0c042a;
   border-color: #aa7cff;
   color: #663EFA;
   text-decoration: none;
