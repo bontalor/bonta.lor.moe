@@ -177,9 +177,14 @@ img {
 }
 
 ::-webkit-scrollbar {
-  background: #aa7cff;
+  background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {
+  background: #aa7cff;
+}
+
+::-webkit-scrollbar-thumb:hover {
   background: #280c8d;
 }
+
