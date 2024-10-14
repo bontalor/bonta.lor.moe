@@ -36,7 +36,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 15.79 seconds
 ```
 
-I visit the http website and see there is a clear task to obtain the flag:
+I visit the http website and see there is a clear task to obtain the flag.
 
 ![](/assets/imgs/2024-10-14-HTB_Discounted-image-1.png)
 
