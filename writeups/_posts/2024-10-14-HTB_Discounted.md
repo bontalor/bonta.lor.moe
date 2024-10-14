@@ -40,13 +40,13 @@ I visit the http website and see there is a clear task to obtain the flag:
 
 ![](/assets/imgs/2024-10-14-HTB_Discounted-image-1.png)
 
-After adding Face Powder to my cart I visit the cart page and notice I can use the discount code "BEAUTYFRIDAY" from the home page for 20% off.
+After adding Face Powder to my cart I visit the cart page and notice I can use the discount code *BEAUTYFRIDAY* from the home page for 20% off.
 
 ![](/assets/imgs/2024-10-14-HTB_Discounted-image-2.png)
 
 I open up burp and start intercepting any requests the cart page sends.
 
-After some digging I find that adding or removing the quantity of items in my cart sends a post request and inside is some unusual data called "recalc_discount".
+After some digging I find that adding or removing the quantity of items in my cart sends a post request and inside is some unusual data called *recalc_discount*.
 
 ![](/assets/imgs/2024-10-14-HTB_Discounted-image-3.png)
 
@@ -62,7 +62,7 @@ With this information I am able to exploit the discount by calculating how many 
 
 ![](/assets/imgs/2024-10-14-HTB_Discounted-image-5.png)
 
-With 5 items in my cart, the discount = $20 and I can intercept the post request to disable the "recalc_discount" data.
+With 5 items in my cart, the discount = $20 and I can intercept the post request to disable the *recalc_discount* data.
 
 ![](/assets/imgs/2024-10-14-HTB_Discounted-image-6.png)
 
