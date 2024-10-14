@@ -38,39 +38,39 @@ Nmap done: 1 IP address (1 host up) scanned in 15.79 seconds
 
 I visit the http website and see there is a clear task to obtain the flag.
 
-![](/assets/imgs/2024-10-14-HTB_Discounted-image-1.png)
+![](/assets/imgs/2024-10-14-htb-discounted-image-1.png)
 
 After adding Face Powder to my cart I visit the cart page and notice I can use the discount code *BEAUTYFRIDAY* from the home page for 20% off.
 
-![](/assets/imgs/2024-10-14-HTB_Discounted-image-2.png)
+![](/assets/imgs/2024-10-14-htb-discounted-image-2.png)
 
 I open up burp and start intercepting any requests the cart page sends.
 
 After some digging I find that adding or removing the quantity of items in my cart sends a post request and inside is some unusual data called *recalc_discount*.
 
-![](/assets/imgs/2024-10-14-HTB_Discounted-image-3.png)
+![](/assets/imgs/2024-10-14-htb-discounted-image-3.png)
 
 I assume the value of 1 means enabled so I change it to a 0 and send the request.
 
 Sure enough the discount is not recalculated when the value is 0.
 
-![](/assets/imgs/2024-10-14-HTB_Discounted-image-4.png)
+![](/assets/imgs/2024-10-14-htb-discounted-image-4.png)
 
 ## Exploitation
 
 With this information I am able to exploit the discount by calculating how many items I need for the discount to = the cost of 1 item.
 
-![](/assets/imgs/2024-10-14-HTB_Discounted-image-5.png)
+![](/assets/imgs/2024-10-14-htb-discounted-image-5.png)
 
 With 5 items in my cart, the discount = $20 and I can intercept the post request to disable the *recalc_discount* data.
 
-![](/assets/imgs/2024-10-14-HTB_Discounted-image-6.png)
+![](/assets/imgs/2024-10-14-htb-discounted-image-6.png)
 
 After removing 4 items I am presented with a total cost of $0.00, and after checking out I obtain the flag.
 
-![](/assets/imgs/2024-10-14-HTB_Discounted-image-7.png)
+![](/assets/imgs/2024-10-14-htb-discounted-image-7.png)
 
-![](/assets/imgs/2024-10-14-HTB_Discounted-image-8.png)
+![](/assets/imgs/2024-10-14-htb-discounted-image-8.png)
 
 pce,\
 bonta
