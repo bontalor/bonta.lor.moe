@@ -3,13 +3,27 @@ entries:
     entries:
       - title: cybersecurity student
         entries:
-        - title: <a href='https://github.com/bontalor' target="_blank">github</a>
-        - title: <a href='https://www.linkedin.com/in/bontalor' target="_blank">linkedin</a>
-        - title: <a href='https://x.com/bontalor' target="_blank">twitter</a>
+        - title: github
+          entries:
+            - title: <a href='https://github.com/bontalor' target="_blank">bontalor</a>
+        - title: linkedin
+          entries:
+            - title: <a href='https://www.linkedin.com/in/bontalor' target="_blank">bontalor</a>
+        - title: twitter
+          entries:
+            - title: <a href='https://x.com/bontalor' target="_blank">bontalor</a>
         - title: discord
           entries:
             - title: bontalor
-        - title: <a href='https://www.twitch.tv/bontalor' target="_blank">twitch</a>
-        - title: <a href='https://osu.ppy.sh/users/15336850' target="_blank">osu!</a>
-        - title: <a href='https://slippi.gg/user/bont-589' target="_blank">slippi</a>
-        - title: <a href='https://myanimelist.net/profile/bontalor' target="_blank">mal</a>
+        - title: twitch
+          entries:
+            - title: <a href='https://www.twitch.tv/bontalor' target="_blank">bontalor</a>
+        - title: osu!
+          entries:
+            - title: <a href='https://osu.ppy.sh/users/15336850' target="_blank">bontalor</a>
+        - title: slippi
+          entries:
+            - title: <a href='https://slippi.gg/user/bont-589' target="_blank">bont-589</a>
+        - title: mal
+          entries:
+            - title: <a href='https://myanimelist.net/profile/bontalor' target="_blank">bontalor</a>
