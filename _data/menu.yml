@@ -6,6 +6,9 @@ entries:
         - title: <a href='https://github.com/bontalor' target="_blank">github</a>
         - title: <a href='https://www.linkedin.com/in/bontalor' target="_blank">linkedin</a>
         - title: <a href='https://x.com/bontalor' target="_blank">twitter</a>
+        - title: discord
+          entries:
+            - title: bontalor
         - title: <a href='https://www.twitch.tv/bontalor' target="_blank">twitch</a>
         - title: <a href='https://osu.ppy.sh/users/15336850' target="_blank">osu!</a>
         - title: <a href='https://slippi.gg/user/bont-589' target="_blank">slippi</a>
