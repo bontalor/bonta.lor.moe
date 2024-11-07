@@ -2,6 +2,8 @@
 layout: post
 ---
 
+![](/assets/imgs/2024-10-14-htb-discounted-title-card.png)
+
 ## Background
 
 Discounted is a very easy difficulty linux box that demonstrates flaws with HTTP requests. It requires a solid understanding of intercepting and manipulating POST requests using tools like Burp Suite. Overall it was a fairly simple box for me since I spent a lot of time learning how to use Burp while studying for the CBBH exam.
