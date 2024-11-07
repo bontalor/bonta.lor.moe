@@ -14,6 +14,7 @@ theme_config:
   back_home_text: "back" # customize text for homepage link in post layout
   date_format: "%m-%d-%Y" # customize how date is formatted
   show_description: false # show blog description in home page
+  lowercase_titles: true # show titles in lowercase in lists
 
 sass:
   style: :compressed
