@@ -62,7 +62,7 @@ Sure enough the discount is not recalculated when the value is 0.
 
 With this information I am able to exploit the discount by calculating how many items I need for the discount to = the cost of 1 item.
 
-With 5 items in my cart, the discount = $20 and I can intercept the post request to disable the *recalc_discount* data.
+With 5 items in my cart, the discount = $20.00 and I can intercept the post request to disable the *recalc_discount* data.
 
 ![](/assets/imgs/2024-10-14-htb-discounted-image-5.png)
 
