@@ -1,6 +1,6 @@
 title: bontalor # name of the site
 url: https://bonta.lor.moe # root address of the site
-baseurl: "/bonta" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
+baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
 
 permalink: /:categories/:slug
 
