@@ -112,18 +112,14 @@ nav a:hover, nav a:focus, nav a.active {
   z-index: 3;
 }
 
-.site-title-link {
-  text-decoration: none; /* Removes underline from the link */
-}
-
 .site-title {
-  font-size: 32px;
-  letter-spacing: 0.5px;
-  line-height: 1.4;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .site-title:hover {
   color: #aa7cff;
+  text-decoration: none;
 }
 
 .post-meta { text-align: right; }
