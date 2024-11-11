@@ -113,13 +113,21 @@ nav a:hover, nav a:focus, nav a.active {
 }
 
 .site-title {
+  display: inline;
+}
+
+.site-title-link {
   text-decoration: none;
   display: inline-block;
 }
 
-.site-title:hover {
+.site-title-link:hover {
   color: #aa7cff;
   text-decoration: none;
+}
+
+.site-title-link:visited {
+  color: #ffffff;
 }
 
 .post-meta { text-align: right; }
