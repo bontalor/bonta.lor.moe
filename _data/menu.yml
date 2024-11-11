@@ -12,7 +12,10 @@ entries:
           - title: <a href='mailto:bont@lor.moe' target="_blank">bont@lor.moe</a>
       - title: twitter
         entries:
-          - title: <a href='https://x.com/bontalor' target="_blank">bontalor</a>
+          - title: <a href='https://x.com/bontalor' target="_blank">@bontalor</a>
+      - title: bluesky
+        entries:
+          - title: <a href='https://bsky.app/profile/bonta.lor.moe' target="_blank">@bonta.lor.moe
       - title: discord
         entries:
           - title: <a href='https://discord.com/users/208778646406692874' target="_blank">bontalor</a>
