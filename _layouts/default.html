@@ -3,7 +3,7 @@
   {%- include head.html -%}
   <body a="{{ site.theme_config.appearance | default: "auto" }}">
     <header>
-      <h1 class="site-title">{{ site.title }}</h1>
+      <h1 href="/" class="site-title">{{ site.title }}</h1>
         {%- include nav.html -%}
       {%-if site.theme_config.show_description-%}
         <p>{{ site.description }}</p>
