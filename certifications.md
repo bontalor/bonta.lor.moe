@@ -12,5 +12,7 @@ title: Certifications
 - Date acquired: October 2024
 - Exprires: Never
 - [Verify](https://www.hackthebox.com/certificates)
+    - Nicholas Kleespies
+    - HTBCERT-D9B9D9D6E6
 
 ![](assets/imgs/CBBH.png)
