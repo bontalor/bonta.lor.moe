@@ -112,8 +112,14 @@ nav a:hover, nav a:focus, nav a.active {
   z-index: 3;
 }
 
-.site-title {
-  border: 5px solid #ffffff;
+.site-title::before {
+  content: attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: #000; /* Outline color */
+  transform: scale(1.05);
 }
 
 .post-meta { text-align: right; }
