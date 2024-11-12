@@ -5,17 +5,22 @@ function goBack() {
     // Split the URL into segments, removing any empty strings caused by leading/trailing slashes
     const pathSegments = currentUrl.split('/').filter(segment => segment !== '');
 
+    // If we're already at the root (empty path), do nothing
+    if (pathSegments.length === 0) {
+        return;
+    }
+
     // Remove the last segment to "go up" one level
     pathSegments.pop();
 
-    // If there are no segments left, we're at the root, so stay there
-    if (pathSegments.length === 0) {
+    // Join the remaining segments to form the new URL path
+    const newPath = '/' + pathSegments.join('/');
+
+    // If the new path is empty, go to the root
+    if (newPath === '/') {
         window.location.href = '/';
     } else {
-        // Join the remaining segments to form the new URL path
-        const newPath = '/' + pathSegments.join('/');
-
-        // Navigate to the new path
+        // Otherwise, try navigating to the new path
         window.location.href = newPath;
     }
 }
