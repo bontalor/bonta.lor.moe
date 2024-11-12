@@ -151,6 +151,15 @@ a:visited {
   color: #aa7cff;
 }
 
+.back {
+  color: #aa7cff;
+  text-decoration: none;
+}
+
+.back:hover {
+  cursor: pointer;
+}
+
 ::selection {
   background-color: #663EFA;
   color: #ffffff;
