@@ -11,7 +11,7 @@ theme: no-style-please # if you are using GitHub Pages, change it to remote_them
 
 theme_config:
   appearance: "dark" # can be "light", "dark" or "auto"
-  back_home_text: "back" # customize text for homepage link in post layout
+  back_home_text: "../" # customize text for homepage link in post layout
   date_format: "%m-%d-%Y" # customize how date is formatted
   show_description: false # show blog description in home page
   lowercase_titles: true # show titles in lowercase in lists
