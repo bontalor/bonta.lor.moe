@@ -1,0 +1,5 @@
+syntax on
+inoremap <C-i> <Esc>
+set t_Co=256
+set number
+set showcmd
