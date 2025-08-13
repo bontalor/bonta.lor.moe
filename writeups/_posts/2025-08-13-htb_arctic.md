@@ -173,7 +173,7 @@ Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
 C:\ColdFusion8\runtime\bin>
 ```
 
-Running the exploit shows the payload upload succeeds and I get a shell! The machine says the user flag is located on the tolis user's desktop, and after some directory traversal I find it.
+Running the exploit shows the payload upload succeeds and I get a shell! The box says the user flag is located on the tolis user's desktop, and after some directory traversal I find it.
 
 ```bash
 C:\Users\tolis\Desktop>dir
