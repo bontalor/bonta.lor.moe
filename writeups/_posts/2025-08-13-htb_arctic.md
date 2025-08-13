@@ -264,7 +264,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 
 ```
 
-Then I reopen my shell session and use certutil.exe to download the exe.\
+Then I reopen my shell session and use certutil.exe to download the payload.\
 *note the certutil.exe method to download files only works on older Windows builds.
 
 ```bash
