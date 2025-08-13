@@ -6,7 +6,7 @@ layout: post
 
 ## Background
 
-*Arctic* is an easy difficulty Windows machine that requires an understanding of file transfers and Windows privilege escalation. I used the metasploit framework for this machine because I had just completed the *Using the Metasploit Framework* module and wanted to test my skills.
+*Arctic* is an easy difficulty Windows box that requires an understanding of file transfers and Windows privilege escalation. I used the metasploit framework for this machine because I had just completed the *Using the Metasploit Framework* module and wanted to test my skills.
 
 ## Enumeration
 
