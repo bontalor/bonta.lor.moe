@@ -9,7 +9,7 @@ favicon: "assets/imgs/favicon.ico" # name+extension of favicon (which must be pu
 
 buttons:
   - url: "https://bonta.lor.moe/"
-    img: "/assets/buttons/bontalor.gif"
+    img: "/assets/88x31/bontalor.gif"
     alt: "bontalor"
 
 theme: no-style-please # if you are using GitHub Pages, change it to remote_theme: riggraz/no-style-please
