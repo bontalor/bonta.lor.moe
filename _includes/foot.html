@@ -1,0 +1,9 @@
+<footer class="footer-buttons">
+  <div class="button-grid">
+    {%- for button in site.buttons -%}
+      <a href="{{ button.url }}">
+        <img src="{{ button.img | relative_url }}" alt="{{ button.alt }}" width="88" height="31">
+      </a>
+    {%- endfor -%}
+  </div>
+</footer>
