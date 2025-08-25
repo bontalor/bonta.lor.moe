@@ -55,6 +55,12 @@ other_buttons:
   - url: "https://thinkwithportals.com/"
     img: "/assets/88x31/portal.jpg"
     alt: "portal"
+  - url: "https://osu.ppy.sh/"
+    img: "/assets/88x31/osu.png"
+    alt: "osu"
+  - url: "https://catbox.moe/"
+    img: "/assets/88x31/catbox.png"
+    alt: "catbox"
     
 theme: no-style-please # if you are using GitHub Pages, change it to remote_theme: riggraz/no-style-please
 
