@@ -7,10 +7,15 @@ permalink: /:categories/:slug
 favicon: "assets/imgs/favicon.ico" # name+extension of favicon (which must be put on the root folder)
 # goat_counter: "yoursitename" # put your GoatCounter name if you want to use GoatCounter analytics
 
-buttons:
+oomf_buttons:
   - url: "https://bonta.lor.moe/"
     img: "/assets/88x31/bontalor.gif"
     alt: "bontalor"
+  - url: "https://mentalstrainrecords.com/"
+    img: "/assets/88x31/MSR.gif"
+    alt: "mental strain records"
+
+other_buttons:
   - url: "#"
     img: "assets/88x31/no_external_sources.png"
     alt: "NES"
