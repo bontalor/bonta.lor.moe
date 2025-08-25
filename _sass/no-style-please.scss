@@ -97,6 +97,11 @@ header a {
   margin-bottom: 31px;
 }
 
+.button-grid a:hover img {
+  border: 5px solid #aa7cff;
+  box-sizing: content-box; /* keeps button from shrinking */
+}
+
 nav {
   display: flex;
   justify-content: center;
