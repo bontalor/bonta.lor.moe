@@ -10,7 +10,7 @@ title: Certifications
 
 ### Vendor: Hack The Box
 - Date acquired: October 2024
-- Exprires: Never
+- Expires: Never
 - [Verify](https://www.credly.com/badges/9bde786c-7ed0-499d-b654-3f091c3f4b60/public_url)
 
 ![](assets/imgs/CBBH.png)
