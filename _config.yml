@@ -21,7 +21,8 @@ oomf_buttons:
 other_buttons:
   - url: "#"
     img: "assets/88x31/no_external_sources.png"
-    alt: "NES"
+    alt: "no external sources"
+    new_tab: false
   - url: "https://archlinux.org/"
     img: "/assets/88x31/archlinux.gif"
     alt: "arch linux"
