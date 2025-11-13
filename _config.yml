@@ -62,6 +62,9 @@ other_buttons:
   - url: "https://catbox.moe/"
     img: "/assets/88x31/catbox.png"
     alt: "catbox"
+  - url: "https://myanimelist.com/"
+    img: "/assets/88x31/mal.png"
+    alt: "myanimelist"
     
 theme: no-style-please # if you are using GitHub Pages, change it to remote_theme: riggraz/no-style-please
 
