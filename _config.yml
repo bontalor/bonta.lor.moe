@@ -62,7 +62,7 @@ other_buttons:
   - url: "https://catbox.moe/"
     img: "/assets/88x31/catbox.png"
     alt: "catbox"
-  - url: "https://myanimelist.com/"
+  - url: "https://myanimelist.net/"
     img: "/assets/88x31/mal.png"
     alt: "myanimelist"
     
