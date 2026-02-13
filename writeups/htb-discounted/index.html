@@ -18,17 +18,17 @@
 <script type="application/ld+json">
 {"headline":"Htb_discounted","dateModified":"2024-10-14T00:00:00+00:00","datePublished":"2024-10-14T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://bonta.lor.moe/writeups/htb-discounted"},"url":"https://bonta.lor.moe/writeups/htb-discounted","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link type="application/atom+xml" rel="alternate" href="https://bonta.lor.moe/feed.xml" title="bontalor" /><link rel="shortcut icon" type="image/x-icon" href="../assets/imgs/favicon.ico" />
-  <link rel="stylesheet" href="../assets/css/main.css" />
+<link type="application/atom+xml" rel="alternate" href="https://bonta.lor.moe/feed.xml" title="bontalor" /><link rel="shortcut icon" type="image/x-icon" href="../../../assets/imgs/favicon.ico" />
+  <link rel="stylesheet" href="../../../assets/css/main.css" />
 </head>
 <body a="dark">
     <header>
-      <a href="../index.html" class="site-title-link"><h1>bontalor</h1></a><nav>
-  <a href="../index.html" class="">Home</a> 
-  <a href="../certifications.html" class="">Certs</a>
-  <a href="../blogs.html" class="">Blogs</a>
-  <a href="../writeups.html" class="active">Writeups</a>
-  <a href="../all.html" class="">All</a>
+      <a href="../../../index.html" class="site-title-link"><h1>bontalor</h1></a><nav>
+  <a href="../../../index.html" class="">Home</a> 
+  <a href="../../../certifications.html" class="">Certs</a>
+  <a href="../../../blogs.html" class="">Blogs</a>
+  <a href="../../../writeups.html" class="active">Writeups</a>
+  <a href="../../../all.html" class="">All</a>
 </nav>
 </header>
     <main class="page-content" aria-label="Content">
@@ -41,7 +41,7 @@
   
   <h1>htb_discounted</h1>
 
-  <p><img src="../assets/imgs/2024-10-14-htb-discounted-title-card.png" alt=""></p>
+  <p><img src="../../../assets/imgs/2024-10-14-htb-discounted-title-card.png" alt=""></p>
 
 <h2 id="background">Background</h2>
 
@@ -78,23 +78,23 @@ Nmap done: 1 IP address (1 host up) scanned in 15.79 seconds
 
 <p>I visit the http website and see there is a clear task to obtain the flag.</p>
 
-<p><img src="../assets/imgs/2024-10-14-htb-discounted-image-1.png" alt=""></p>
+<p><img src="../../../assets/imgs/2024-10-14-htb-discounted-image-1.png" alt=""></p>
 
 <p>After adding Face Powder to my cart I visit the cart page and notice I can use the discount code <em>BEAUTYFRIDAY</em> from the home page for 20% off.</p>
 
-<p><img src="../assets/imgs/2024-10-14-htb-discounted-image-2.png" alt=""></p>
+<p><img src="../../../assets/imgs/2024-10-14-htb-discounted-image-2.png" alt=""></p>
 
 <p>I open up burp and start intercepting any requests the cart page sends.</p>
 
 <p>After some digging I find that adding or removing the quantity of items in my cart sends a post request and inside is some unusual data called <em>recalc_discount</em>.</p>
 
-<p><img src="../assets/imgs/2024-10-14-htb-discounted-image-3.png" alt=""></p>
+<p><img src="../../../assets/imgs/2024-10-14-htb-discounted-image-3.png" alt=""></p>
 
 <p>I assume the value of 1 means enabled so I change it to a 0 and send the request.</p>
 
 <p>Sure enough the discount is not recalculated when the value is 0.</p>
 
-<p><img src="../assets/imgs/2024-10-14-htb-discounted-image-4.png" alt=""></p>
+<p><img src="../../../assets/imgs/2024-10-14-htb-discounted-image-4.png" alt=""></p>
 
 <h2 id="exploitation">Exploitation</h2>
 
@@ -102,15 +102,15 @@ Nmap done: 1 IP address (1 host up) scanned in 15.79 seconds
 
 <p>With 5 items in my cart, the discount = $20.00 and I can intercept the post request to disable the <em>recalc_discount</em> data.</p>
 
-<p><img src="../assets/imgs/2024-10-14-htb-discounted-image-5.png" alt=""></p>
+<p><img src="../../../assets/imgs/2024-10-14-htb-discounted-image-5.png" alt=""></p>
 
-<p><img src="../assets/imgs/2024-10-14-htb-discounted-image-6.png" alt=""></p>
+<p><img src="../../../assets/imgs/2024-10-14-htb-discounted-image-6.png" alt=""></p>
 
 <p>After removing 4 items I am presented with a total cost of $0.00, and after checking out I obtain the flag.</p>
 
-<p><img src="../assets/imgs/2024-10-14-htb-discounted-image-7.png" alt=""></p>
+<p><img src="../../../assets/imgs/2024-10-14-htb-discounted-image-7.png" alt=""></p>
 
-<p><img src="../assets/imgs/2024-10-14-htb-discounted-image-8.png" alt=""></p>
+<p><img src="../../../assets/imgs/2024-10-14-htb-discounted-image-8.png" alt=""></p>
 
 <p>pce,<br>
 bonta</p>
@@ -123,7 +123,7 @@ bonta</p>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/base16/windows-high-contrast.min.css" integrity="sha512-SE4GvXE6j696nfjO1PEfQ1+3bfOya4A5bFXnUx8xYsFYRVBhY5RYGsp8lBZBIXD+Q+knAuhlMDh98rrXiuVMiQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>hljs.highlightAll();</script>
-        <script src="../assets/js/goback.js"></script>
+        <script src="../../../assets/js/goback.js"></script>
     
   </body>
 </html>

