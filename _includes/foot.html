@@ -1,0 +1,23 @@
+<footer class="footer-buttons">
+  {%- if site.oomf_buttons -%}
+    <div class="button-grid oomf-buttons">
+      {%- for button in site.oomf_buttons -%}
+        <a href="{{ button.url }}"
+           {% if button.new_tab != false %}target="_blank" rel="noopener noreferrer"{% endif %}>
+          <img src="{{ button.img | relative_url }}" alt="{{ button.alt }}" width="88" height="31">
+        </a>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if site.other_buttons -%}
+    <div class="button-grid other-buttons">
+      {%- for button in site.other_buttons -%}
+        <a href="{{ button.url }}"
+           {% if button.new_tab != false %}target="_blank" rel="noopener noreferrer"{% endif %}>
+          <img src="{{ button.img | relative_url }}" alt="{{ button.alt }}" width="88" height="31">
+        </a>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</footer>
