@@ -44,4 +44,5 @@ dollcode: "$DOLLCODE"
 EOF
 
 # --- Build Jekyll site ---
+bundle exec jekyll clean
 bundle exec jekyll build

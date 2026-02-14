@@ -149,6 +149,9 @@ a.foot-link:visited {
   width: 88px;
   height: 31px; }
 
+.button-grid.oomf-buttons {
+  padding-bottom: 43px; }
+
 /* ===============================
    Utilities
 =============================== */
