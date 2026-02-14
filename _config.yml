@@ -75,10 +75,6 @@ theme_config:
   show_description: false # show blog description in home page
   lowercase_titles: true # show titles in lowercase in lists
 
-sass:
-  style: :expanded
-  sass_dir: _sass
-
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
