@@ -76,7 +76,7 @@ theme_config:
   lowercase_titles: true # show titles in lowercase in lists
 
 sass:
-  style: :compressed
+  style: :expanded
 
 plugins:
   - jekyll-feed

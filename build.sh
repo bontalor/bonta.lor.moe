@@ -45,4 +45,3 @@ EOF
 
 # --- Build Jekyll site ---
 bundle exec jekyll build
-
