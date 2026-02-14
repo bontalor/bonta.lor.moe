@@ -1,6 +1,7 @@
 # bonta blog
 ## dependencies
 
+- git
 - ruby
 - bundler
 - jekyll
