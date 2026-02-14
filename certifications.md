@@ -14,7 +14,7 @@ title: Certifications
 - Expires: Never
 - [Verify](https://www.credly.com/badges/9bde786c-7ed0-499d-b654-3f091c3f4b60/public_url)
 
-![](assets/imgs/CWES.png)
+![](/assets/imgs/CWES.png)
 
 ## Security Blue Team | Certified Blue Team Level 1
 
@@ -23,4 +23,4 @@ title: Certifications
 - Expires: Never
 - [Verify](https://www.credly.com/badges/cbf26df4-1b7c-4005-ac87-11b936343ba5/public_url)
 
-![](assets/imgs/BTL1.png)
+![](/assets/imgs/BTL1.png)
