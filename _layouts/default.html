@@ -14,18 +14,10 @@
 				{{ content }}
 			</div>
 		</main>
-		<footer class="site-footer">
+		<footer>
 			<div class="w">
-				<hr>
-				<small>
-					build {{ site.data.git.build_date }} ~@
-					commit
-					<a href="https://github.com/bontalor/bonta.lor.moe/commit/{{ site.data.git.commit }}">
-						{{ site.data.git.commit_short }}
-					</a> ~@
-					{{ site.data.git.branch }} ~@
-					{{ site.data.git.build_host }}
-				</small>
+				<p><a href="https://github.com/bontalor/bonta.lor.moe/commit/{{ site.data.git.commit_short }}">
+						{{ site.data.git.dollcode }}</a> / made by bontalor with <3</p>
 			</div>
 		</footer>
 
