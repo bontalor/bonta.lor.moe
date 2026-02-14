@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Htb_discounted</title><!-- Begin Jekyll SEO tag v2.7.1 -->
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Htb_discounted" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://bonta.lor.moe/writeups/htb_discounted/" />
+<meta property="og:url" content="https://bonta.lor.moe/writeups/htb_discounted/" />
+<meta property="og:site_name" content="bontalor" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-10-14T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Htb_discounted" />
+<script type="application/ld+json">
+{"datePublished":"2024-10-14T00:00:00+00:00","url":"https://bonta.lor.moe/writeups/htb_discounted/","mainEntityOfPage":{"@type":"WebPage","@id":"https://bonta.lor.moe/writeups/htb_discounted/"},"@type":"BlogPosting","headline":"Htb_discounted","dateModified":"2024-10-14T00:00:00+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://bonta.lor.moe/feed.xml" title="bontalor" /><link rel="shortcut icon" type="image/x-icon" href="/assets/imgs/favicon.ico" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body a="dark">
+		<header>
+			<a href="/" class="site-title-link"><h1>bontalor</h1></a><nav>
+  <a href="/" class="">Home</a> 
+  <a href="/certifications" class="">Certs</a>
+  <a href="/blogs" class="">Blogs</a>
+  <a href="/writeups" class="active">Writeups</a>
+  <a href="/all" class="">All</a>
+</nav>
+</header>
+		<main class="page-content" aria-label="Content">
+			<div class="w">
+				<a class="back" onclick="goBack()">. . /</a>
+<article>
+  <p class="post-meta">
+    <time datetime="2024-10-14 00:00:00 +0000">10-14-2024</time>
+  </p>
+  
+  <h1>htb_discounted</h1>
+
+  <p><img src="/assets/imgs/2024-10-14-htb-discounted-title-card.png" alt=""></p>
+
+<h2 id="background">Background</h2>
+
+<p><em>Discounted</em> is a very easy difficulty linux box that demonstrates flaws with HTTP requests. It requires a solid understanding of intercepting and manipulating POST requests using tools like Burp Suite. Overall it was a fairly simple box for me since I spent a lot of time learning how to use Burp while studying for the CBBH exam.</p>
+
+<h2 id="enumeration">Enumeration</h2>
+
+<p>nmap:</p>
+
+<pre><code class="language-bash">┌──(bonta㉿lor)-[~]
+└─$ nmap -sC -sV -p- --min-rate 10000 10.129.228.190
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-10-14 00:09 EDT
+Nmap scan report for 10.129.228.190
+Host is up (0.064s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 57:69:ed:8e:f3:bd:5d:2c:c4:5c:90:6d:4a:42:a0:4b (RSA)
+|   256 a6:ed:2d:0d:3d:55:41:89:bd:ae:9c:50:6e:13:0a:f6 (ECDSA)
+|_  256 f0:e1:87:6c:d8:21:ca:ca:f2:e1:0b:fc:0d:cf:3b:62 (ED25519)
+80/tcp open  http    nginx 1.18.0
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+|_http-title: BeautyStylers
+|_http-server-header: nginx/1.18.0
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 15.79 seconds
+</code></pre>
+
+<p>I visit the http website and see there is a clear task to obtain the flag.</p>
+
+<p><img src="/assets/imgs/2024-10-14-htb-discounted-image-1.png" alt=""></p>
+
+<p>After adding Face Powder to my cart I visit the cart page and notice I can use the discount code <em>BEAUTYFRIDAY</em> from the home page for 20% off.</p>
+
+<p><img src="/assets/imgs/2024-10-14-htb-discounted-image-2.png" alt=""></p>
+
+<p>I open up burp and start intercepting any requests the cart page sends.</p>
+
+<p>After some digging I find that adding or removing the quantity of items in my cart sends a post request and inside is some unusual data called <em>recalc_discount</em>.</p>
+
+<p><img src="/assets/imgs/2024-10-14-htb-discounted-image-3.png" alt=""></p>
+
+<p>I assume the value of 1 means enabled so I change it to a 0 and send the request.</p>
+
+<p>Sure enough the discount is not recalculated when the value is 0.</p>
+
+<p><img src="/assets/imgs/2024-10-14-htb-discounted-image-4.png" alt=""></p>
+
+<h2 id="exploitation">Exploitation</h2>
+
+<p>With this information I am able to exploit the discount by calculating how many items I need for the discount to = the cost of 1 item.</p>
+
+<p>With 5 items in my cart, the discount = $20.00 and I can intercept the post request to disable the <em>recalc_discount</em> data.</p>
+
+<p><img src="/assets/imgs/2024-10-14-htb-discounted-image-5.png" alt=""></p>
+
+<p><img src="/assets/imgs/2024-10-14-htb-discounted-image-6.png" alt=""></p>
+
+<p>After removing 4 items I am presented with a total cost of $0.00, and after checking out I obtain the flag.</p>
+
+<p><img src="/assets/imgs/2024-10-14-htb-discounted-image-7.png" alt=""></p>
+
+<p><img src="/assets/imgs/2024-10-14-htb-discounted-image-8.png" alt=""></p>
+
+<p>pce,<br>
+bonta</p>
+
+</article>
+
+			</div>
+		</main>
+		<footer>
+			<div class="w">
+				<p><a href="https://github.com/bontalor/bonta.lor.moe/commit/d8a55f5" target="_blank" rel="noopener noreferrer">
+						▖▖▌▖▌▌▌▌▘▌▌▖▌▘▌▖▘▖</a> / made by bontalor with &lt;3</p>
+			</div>
+		</footer>
+
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/base16/windows-high-contrast.min.css" integrity="sha512-SE4GvXE6j696nfjO1PEfQ1+3bfOya4A5bFXnUx8xYsFYRVBhY5RYGsp8lBZBIXD+Q+knAuhlMDh98rrXiuVMiQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script>hljs.highlightAll();</script>
+		<script src="/assets/js/goback.js"></script>
+		
+	</body>
+</html>
