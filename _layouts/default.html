@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "en" }}">
-  {%- include head.html -%}
-  <body a="{{ site.theme_config.appearance | default: "auto" }}">
-    <header>
-      <a href="/" class="site-title-link"><h1>{{ site.title }}</h1></a>
-        {%- include nav.html -%}
-      {%-if site.theme_config.show_description-%}
-        <p>{{ site.description }}</p>
-      {%-endif-%}
-    </header>
-    <main class="page-content" aria-label="Content">
-      <div class="w">
-        {{ content }}
-      </div>
-    </main>
+	{%- include head.html -%}
+	<body a="{{ site.theme_config.appearance | default: "auto" }}">
+		<header>
+			<a href="/" class="site-title-link"><h1>{{ site.title }}</h1></a>
+			{%- include nav.html -%}
+			{%-if site.theme_config.show_description-%}
+			<p>{{ site.description }}</p>
+			{%-endif-%}
+		</header>
+		<main class="page-content" aria-label="Content">
+			<div class="w">
+				{{ content }}
+			</div>
+		</main>
+		<footer class="site-footer">
+			<div class="w">
+				<hr>
+				<small>
+					build {{ site.data.git.build_date }} ~@
+					commit
+					<a href="https://github.com/bontalor/bonta.lor.moe/commit/{{ site.data.git.commit }}">
+						{{ site.data.git.commit_short }}
+					</a> ~@
+					{{ site.data.git.branch }} ~@
+					{{ site.data.git.build_host }}
+				</small>
+			</div>
+		</footer>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/base16/windows-high-contrast.min.css" integrity="sha512-SE4GvXE6j696nfjO1PEfQ1+3bfOya4A5bFXnUx8xYsFYRVBhY5RYGsp8lBZBIXD+Q+knAuhlMDh98rrXiuVMiQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script>hljs.highlightAll();</script>
-        <script src="/assets/js/goback.js"></script>
-    {% if page.custom_js %}
-      {% for js_file in page.custom_js %}
-        <script type="text/javascript" src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
-      {% endfor %}
-    {% endif %}
-  </body>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/base16/windows-high-contrast.min.css" integrity="sha512-SE4GvXE6j696nfjO1PEfQ1+3bfOya4A5bFXnUx8xYsFYRVBhY5RYGsp8lBZBIXD+Q+knAuhlMDh98rrXiuVMiQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script>hljs.highlightAll();</script>
+		<script src="/assets/js/goback.js"></script>
+		{% if page.custom_js %}
+		{% for js_file in page.custom_js %}
+		<script type="text/javascript" src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
+		{% endfor %}
+		{% endif %}
+	</body>
 </html>
